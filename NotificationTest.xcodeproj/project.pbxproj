@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B6F14E842CC69091002DCBFB /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = B6F14E832CC69091002DCBFB /* FirebaseCrashlytics */; };
+		B6F14E862CC69091002DCBFB /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = B6F14E852CC69091002DCBFB /* FirebaseMessaging */; };
+		B6F14E882CC6920F002DCBFB /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = B6F14E872CC6920F002DCBFB /* FirebaseAnalytics */; };
+		B6F14E8A2CC6920F002DCBFB /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B6F14E892CC6920F002DCBFB /* FirebaseAnalyticsSwift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		B6F14E642CC68E3B002DCBFB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +36,22 @@
 		B6F14E6D2CC68E3B002DCBFB /* NotificationTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotificationTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B6F14E912CC6A3EF002DCBFB /* Exceptions for "NotificationTest" folder in "NotificationTest" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B6F14E522CC68E3A002DCBFB /* NotificationTest */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B6F14E552CC68E3A002DCBFB /* NotificationTest */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B6F14E912CC6A3EF002DCBFB /* Exceptions for "NotificationTest" folder in "NotificationTest" target */,
+			);
 			path = NotificationTest;
 			sourceTree = "<group>";
 		};
@@ -52,6 +72,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6F14E862CC69091002DCBFB /* FirebaseMessaging in Frameworks */,
+				B6F14E882CC6920F002DCBFB /* FirebaseAnalytics in Frameworks */,
+				B6F14E842CC69091002DCBFB /* FirebaseCrashlytics in Frameworks */,
+				B6F14E8A2CC6920F002DCBFB /* FirebaseAnalyticsSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +136,10 @@
 			);
 			name = NotificationTest;
 			packageProductDependencies = (
+				B6F14E832CC69091002DCBFB /* FirebaseCrashlytics */,
+				B6F14E852CC69091002DCBFB /* FirebaseMessaging */,
+				B6F14E872CC6920F002DCBFB /* FirebaseAnalytics */,
+				B6F14E892CC6920F002DCBFB /* FirebaseAnalyticsSwift */,
 			);
 			productName = NotificationTest;
 			productReference = B6F14E532CC68E3A002DCBFB /* NotificationTest.app */;
@@ -195,6 +223,9 @@
 			);
 			mainGroup = B6F14E4A2CC68E3A002DCBFB;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B6F14E802CC69091002DCBFB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B6F14E542CC68E3A002DCBFB /* Products */;
 			projectDirPath = "";
@@ -393,24 +424,32 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NotificationTest/NotificationTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NotificationTest/Preview Content\"";
 				DEVELOPMENT_TEAM = 73XTRV58A2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationTest/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Reclamefolder;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.secondmove.-animatedimages.NotificationTest";
+				PRODUCT_BUNDLE_IDENTIFIER = nl.aquilasoft.reclamefolder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -422,24 +461,32 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = NotificationTest/NotificationTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"NotificationTest/Preview Content\"";
 				DEVELOPMENT_TEAM = 73XTRV58A2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationTest/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Reclamefolder;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.secondmove.-animatedimages.NotificationTest";
+				PRODUCT_BUNDLE_IDENTIFIER = nl.aquilasoft.reclamefolder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -558,6 +605,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B6F14E802CC69091002DCBFB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.26.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B6F14E832CC69091002DCBFB /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6F14E802CC69091002DCBFB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		B6F14E852CC69091002DCBFB /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6F14E802CC69091002DCBFB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		B6F14E872CC6920F002DCBFB /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6F14E802CC69091002DCBFB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		B6F14E892CC6920F002DCBFB /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6F14E802CC69091002DCBFB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B6F14E4B2CC68E3A002DCBFB /* Project object */;
 }

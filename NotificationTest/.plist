@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>572611954814-38kh43gpjch5qvl2pcl49b6skt0c8mqq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.572611954814-38kh43gpjch5qvl2pcl49b6skt0c8mqq</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>572611954814-4di9mpukn5cs5g9t6l0b51bho72bqibi.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDlU0yznQWay2NiYW3gVwaqOkKBe3ylwL8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>572611954814</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>nl.aquilasoft.reclamefolder</string>
+	<key>PROJECT_ID</key>
+	<string>reclamefoldernl</string>
+	<key>STORAGE_BUCKET</key>
+	<string>reclamefoldernl.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:572611954814:ios:21f52ff8ba06ed39</string>
+	<key>DATABASE_URL</key>
+	<string>https://reclamefoldernl.firebaseio.com</string>
+</dict>
+</plist>

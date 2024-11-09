@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@main
 struct NotificationTestApp: App {
     var body: some Scene {
         WindowGroup {
