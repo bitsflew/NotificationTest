@@ -11,8 +11,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            PushNotifiactionToggle()
-            // PushNotifiactionToggle(statusProvider: NotificationStatus.test(status: .denied))
+            // PushNotifiactionToggle()
+            PushNotifiactionToggle(statusProvider: PushNotificationStatus.test(status: .denied))
         }
     }
 }
@@ -21,9 +21,9 @@ struct ContentView: View {
     ContentView()
 }
 
-struct NotificationStatus {
+enum PushNotificationStatus {
     typealias Completion = (UNAuthorizationStatus) -> Void
-    typealias Provider = (@escaping NotificationStatus.Completion) -> Void
+    typealias Provider = (@escaping PushNotificationStatus.Completion) -> Void
 
     static func get(_ completion: @escaping Completion) {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
@@ -41,12 +41,12 @@ struct NotificationStatus {
 }
 
 struct PushNotifiactionToggle: View {
-    private let statusProvider: NotificationStatus.Provider
+    private let statusProvider: PushNotificationStatus.Provider
     @State private var isOn = false
     @State private var isProgrammaticChange = false
     @State var authorizationStatus: UNAuthorizationStatus?
 
-    init(_ statusProvider: @escaping (@escaping NotificationStatus.Completion) -> Void = NotificationStatus.get) {
+    init(statusProvider: @escaping (@escaping PushNotificationStatus.Completion) -> Void = PushNotificationStatus.get) {
         self.statusProvider = statusProvider
     }
 
