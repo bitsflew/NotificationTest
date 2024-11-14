@@ -73,17 +73,6 @@ struct PushNotifiactionToggle: View {
             isOn = authorizationStatus == .authorized
             isProgrammaticChange = false
         }
-
-        /*
-         UNUserNotificationCenter.current().getNotificationSettings { settings in
-             DispatchQueue.main.async {
-                 authorizationStatus = settings.authorizationStatus
-                 isProgrammaticChange = true
-                 isOn = authorizationStatus == .authorized
-                 isProgrammaticChange = false
-             }
-         }
-         */
     }
 
     var body: some View {
