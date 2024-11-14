@@ -12,6 +12,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             PushNotifiactionToggle()
+            // PushNotifiactionToggle(statusProvider: NotificationStatus.test(status: .denied))
         }
     }
 }
@@ -20,10 +21,34 @@ struct ContentView: View {
     ContentView()
 }
 
+struct NotificationStatus {
+    typealias Completion = (UNAuthorizationStatus) -> Void
+    typealias Provider = (@escaping NotificationStatus.Completion) -> Void
+
+    static func get(_ completion: @escaping Completion) {
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            DispatchQueue.main.async {
+                completion(settings.authorizationStatus)
+            }
+        }
+    }
+
+    static func test(status: UNAuthorizationStatus) -> Provider {
+        { completion in
+            completion(status)
+        }
+    }
+}
+
 struct PushNotifiactionToggle: View {
+    private let statusProvider: NotificationStatus.Provider
     @State private var isOn = false
     @State private var isProgrammaticChange = false
     @State var authorizationStatus: UNAuthorizationStatus?
+
+    init(_ statusProvider: @escaping (@escaping NotificationStatus.Completion) -> Void = NotificationStatus.get) {
+        self.statusProvider = statusProvider
+    }
 
     private func openAppSettings() {
         if let appSettings = URL(string: UIApplication.openNotificationSettingsURLString) {
@@ -42,14 +67,23 @@ struct PushNotifiactionToggle: View {
     }
 
     private func updateAuthorizationStatus() {
-        UNUserNotificationCenter.current().getNotificationSettings { settings in
-            DispatchQueue.main.async {
-                authorizationStatus = settings.authorizationStatus
-                isProgrammaticChange = true
-                isOn = authorizationStatus == .authorized
-                isProgrammaticChange = false
-            }
+        statusProvider { authorizationStatus in
+            self.authorizationStatus = authorizationStatus
+            isProgrammaticChange = true
+            isOn = authorizationStatus == .authorized
+            isProgrammaticChange = false
         }
+
+        /*
+         UNUserNotificationCenter.current().getNotificationSettings { settings in
+             DispatchQueue.main.async {
+                 authorizationStatus = settings.authorizationStatus
+                 isProgrammaticChange = true
+                 isOn = authorizationStatus == .authorized
+                 isProgrammaticChange = false
+             }
+         }
+         */
     }
 
     var body: some View {
